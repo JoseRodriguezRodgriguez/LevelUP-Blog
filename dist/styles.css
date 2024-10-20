@@ -445,4 +445,98 @@ body {
   object-fit: contain;
 }
 
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 10px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .container {
+    padding: 10px;
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .news-list {
+    grid-template-columns: 1fr;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+  }
+}
+@media (max-width: 1024px) {
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  p {
+    font-size: 16px;
+  }
+  .container {
+    padding: 15px;
+  }
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .news-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  button {
+    width: auto;
+    padding: 12px 20px;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    font-size: 20px;
+    line-height: 1.75;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 18px;
+  }
+  .container {
+    padding: 20px;
+  }
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .news-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  button {
+    width: auto;
+    padding: 15px 30px;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */
