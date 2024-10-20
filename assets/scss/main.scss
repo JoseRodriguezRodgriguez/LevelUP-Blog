@@ -485,19 +485,19 @@ body {
     //height: 239px;
     background-image: url('../images/premium.png');
     background-size: cover;
-    //display: grid;
-    //grid-template-columns: 1fr 1fr 1fr; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
     //align-items: center; 
     padding: 2rem 0;
 
-    /*.premium-title,
+    .premium-title,
     .premium-description,
     .premium-button {
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-    }*/
+    }
     .container {
         display: grid;
         gap: 1rem;
@@ -509,8 +509,6 @@ body {
     }
 
     .premium-title {
-        //grid-column: 1 / 2;
-        
         h2 {
             font-family: $serif;
             font-weight: bold;
@@ -518,9 +516,9 @@ body {
             color: $white;
             line-height: 1.2;
             margin-bottom: 1rem;
-            //text-align: left;
-            //white-space: pre-wrap;
-            //max-width: 200px;
+            text-align: left;
+            white-space: pre-wrap;
+            max-width: 200px;
 
             @include media-min($tablet) {
                 font-size: 3rem;
@@ -533,13 +531,11 @@ body {
     }
 
     .premium-description {
-        //grid-column: 2 / 3; 
-
         p {
             font-family: $sans;
             font-size: 1rem;
             color: $white;
-            //text-align: left;
+            text-align: left;
             font-weight: 350;
             
             @include media-min($tablet) {
@@ -549,7 +545,6 @@ body {
     }
 
     .premium-button {
-        //grid-column: 3 / 4;
         display: flex;
         justify-content: center;
         
@@ -660,7 +655,7 @@ body {
     }
 }
 
-@media (max-width: $tablet) /*and (min-width: $mobile + 1)*/ {
+@media (max-width: $tablet) {
     body {
         font-size: 16px;
         line-height: 1.6;

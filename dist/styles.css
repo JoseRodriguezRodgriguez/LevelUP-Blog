@@ -432,15 +432,17 @@ body {
 .premium-section {
   background-image: url("../images/premium.png");
   background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 2rem 0;
-  /*.premium-title,
-  .premium-description,
-  .premium-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-  }*/
+}
+.premium-section .premium-title,
+.premium-section .premium-description,
+.premium-section .premium-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .premium-section .container {
   display: grid;
@@ -459,6 +461,9 @@ body {
   color: white;
   line-height: 1.2;
   margin-bottom: 1rem;
+  text-align: left;
+  white-space: pre-wrap;
+  max-width: 200px;
 }
 @media (min-width: 1024px) {
   .premium-section .premium-title h2 {
@@ -472,6 +477,7 @@ body {
   font-family: "Alegreya Sans", sans-serif;
   font-size: 1rem;
   color: white;
+  text-align: left;
   font-weight: 350;
 }
 @media (min-width: 1024px) {
