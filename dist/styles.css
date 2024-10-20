@@ -248,38 +248,59 @@ body {
   cursor: pointer;
 }
 
+/*Premium*/
+.premium {
+  background-image: url("../images/premium_banner.png");
+  background-size: cover;
+  background-position: center;
+  padding: 160px 0;
+  text-align: center;
+  color: #ffffff;
+}
+.premium h2 {
+  font-family: "Alegreya", serif;
+  font-size: 48px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.premium span {
+  color: #2CBCFF;
+}
+
 /* Footer */
 .footer {
   background-color: #000000;
-  padding: 50px 0;
-  text-align: center;
-}
-.footer h3 {
-  color: #ffffff;
-}
-.footer h3 span {
-  color: #2CBCFF;
-}
-.footer button {
-  background-color: #2CBCFF;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+  height: 210px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .footer p {
+  font-family: "Alegreya", serif;
+  font-weight: bold;
+  font-size: 30px;
   color: #ffffff;
+  margin-bottom: 20px;
 }
-.footer .social-media {
-  list-style: none;
+.footer .social-icons {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   justify-content: center;
 }
-.footer .social-media a {
-  color: #ffffff;
-  text-decoration: none;
+.footer .social-icons a {
+  display: inline-block;
+  width: 40px; /* Ajustar el tamaño del ícono */
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+.footer .social-icons a:hover {
+  transform: scale(1.1);
+}
+.footer .social-icons a img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 /*# sourceMappingURL=styles.css.map */
