@@ -1,9 +1,15 @@
 @charset "UTF-8";
-/* Variables */
+.container {
+  max-width: 1060px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin: auto;
+}
+
 body {
   font-family: "Alegreya Sans", sans-serif;
   background-color: #001722;
-  color: #ffffff;
+  color: white;
   margin: 0;
 }
 
@@ -15,7 +21,7 @@ body {
 
 /* Header */
 .header {
-  background-color: #000000;
+  background-color: black;
   height: 70px;
   display: flex;
   align-items: center;
@@ -37,7 +43,7 @@ body {
 }
 .header .logo span {
   font-weight: bold;
-  color: #ffffff;
+  color: white;
 }
 .header .nav {
   margin-left: auto;
@@ -49,7 +55,7 @@ body {
 }
 .header .nav a {
   font-family: "Alegreya", serif;
-  color: #ffffff;
+  color: white;
   text-decoration: none;
   font-size: 16px;
   font-weight: 400;
@@ -66,13 +72,13 @@ body {
   background-position: center;
   padding: 160px 0;
   text-align: center;
-  color: #ffffff;
+  color: white;
 }
 .hero h2 {
   font-family: "Alegreya", serif;
   font-size: 48px;
   line-height: 1.2;
-  color: #ffffff;
+  color: white;
   font-weight: bold;
 }
 .hero h2 span {
@@ -88,21 +94,13 @@ body {
 }
 .hero p {
   font-size: 20px;
-  color: #ffffff;
+  color: white;
   margin-top: 20px;
 }
 
 /* Featured News */
 .featured-news {
   padding: 50px 0;
-  /*.container {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 5px;
-      margin-bottom: 20px;
-  }
-  */
 }
 .featured-news .container {
   max-width: 900px;
@@ -118,7 +116,7 @@ body {
 .featured-news h3 {
   font-family: "Alegreya", serif;
   font-size: 36px;
-  color: #ffffff;
+  color: white;
   margin: 0;
 }
 .featured-news .all-featured-news {
@@ -169,7 +167,7 @@ body {
   font-size: 30px;
   font-weight: bold;
   margin: 0;
-  color: #ffffff;
+  color: white;
 }
 .featured-news .news-grid .news-item .date, .featured-news .news-grid .news-item .author {
   font-size: 0.9rem;
@@ -177,7 +175,7 @@ body {
 }
 .featured-news .news-grid .news-item .category {
   background-color: #2CBCFF;
-  color: #000000;
+  color: black;
   padding: 5px 10px;
   border-radius: 21px;
   font-family: "Alegreya", serif;
@@ -205,7 +203,7 @@ body {
 }
 .latest-news h3 {
   font-size: 1.8rem;
-  color: #ffffff;
+  color: white;
 }
 .latest-news .filter-buttons {
   display: flex;
@@ -234,42 +232,85 @@ body {
 }
 .latest-news .news-list article h4 {
   font-size: 1.2rem;
-  color: #ffffff;
+  color: white;
 }
 .latest-news .news-list article p {
   color: #9ea7ad;
 }
 .latest-news .news-page-button {
   background-color: #2CBCFF;
-  color: #ffffff;
+  color: white;
   border: none;
   padding: 15px 30px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-/*Premium*/
-.premium {
-  background-image: url("../images/premium_banner.png");
+/* Premium */
+.premium-section {
+  height: 239px;
+  background-image: url("../images/premium.png");
   background-size: cover;
-  background-position: center;
-  padding: 160px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 0 40px;
+}
+.premium-section .premium-title,
+.premium-section .premium-description,
+.premium-section .premium-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: #ffffff;
 }
-.premium h2 {
+.premium-section .premium-title {
+  grid-column: 1/2;
+}
+.premium-section .premium-title h2 {
   font-family: "Alegreya", serif;
-  font-size: 48px;
   font-weight: bold;
-  color: #ffffff;
+  font-size: 48px;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-align: left;
+  max-width: 200px;
 }
-.premium span {
+.premium-section .premium-title h2 span {
   color: #2CBCFF;
+}
+.premium-section .premium-description {
+  grid-column: 2/3;
+}
+.premium-section .premium-description p {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 20px;
+  color: white;
+  text-align: left;
+  font-weight: 350;
+}
+.premium-section .premium-button {
+  grid-column: 3/4;
+  display: flex;
+  justify-content: center;
+}
+.premium-section .premium-button button {
+  background-color: #2CBCFF;
+  color: black;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 55px;
+  border: none;
+  cursor: pointer;
+  min-width: 180px;
 }
 
 /* Footer */
 .footer {
-  background-color: #000000;
+  background-color: black;
   height: 210px;
   display: flex;
   justify-content: center;
@@ -280,7 +321,7 @@ body {
   font-family: "Alegreya", serif;
   font-weight: bold;
   font-size: 30px;
-  color: #ffffff;
+  color: white;
   margin-bottom: 20px;
 }
 .footer .social-icons {
@@ -290,7 +331,7 @@ body {
 }
 .footer .social-icons a {
   display: inline-block;
-  width: 40px; /* Ajustar el tamaño del ícono */
+  width: 40px;
   height: 40px;
   transition: transform 0.3s ease;
 }

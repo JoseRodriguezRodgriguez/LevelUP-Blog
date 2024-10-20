@@ -1,15 +1,9 @@
-/* Variables */
-$background-color: #001722;
-$footer-color: #000000;
-$header-color: #000000;
-$button-color: #2CBCFF;
-$text-color: #ffffff;
-$accent-color: #2CBCFF;
+@import "settings/variables";
 
 body {
-    font-family: 'Alegreya Sans', sans-serif;
-    background-color: $background-color;
-    color: $text-color;
+    font-family: $sans;
+    background-color: $background;
+    color: $white;
     margin: 0;
 }
 
@@ -21,7 +15,7 @@ body {
 
 /* Header */
 .header {
-    background-color: $header-color;
+    background-color: $black;
     height: 70px; 
     display: flex;
     align-items: center;
@@ -36,15 +30,15 @@ body {
     }
 
     .logo {
-        font-family: 'Alegreya Sans', sans-serif;
+        font-family: $sans;
         font-size: 24px;
         font-weight: bold;
-        color: $accent-color;
+        color: $primary;
         margin-right: 580px;
 
         span {
             font-weight: bold;
-            color: #ffffff;
+            color: $white;
         }
     }
 
@@ -58,15 +52,15 @@ body {
         }
 
         a {
-            font-family: 'Alegreya', serif;
-            color: #ffffff;
+            font-family: $serif;
+            color:$white;
             text-decoration: none;
             font-size: 16px;
             font-weight: 400;
             transition: color 0.3s ease;
 
             &:hover {
-                color: $accent-color;
+                color: $primary;
             }
         }
     }
@@ -79,17 +73,17 @@ body {
     background-position: center;
     padding: 160px 0;
     text-align: center;
-    color: #ffffff;
+    color: $white;
     
     h2 {
-        font-family: 'Alegreya', serif;
+        font-family: $serif;
         font-size: 48px;
         line-height: 1.2;
-        color: #ffffff;
+        color: $white;
         font-weight: bold;
         
         span {
-            color: $accent-color;
+            color: $primary;
         }
 
         &::after {
@@ -97,14 +91,14 @@ body {
             display: block;
             width: 180px;
             height: 1px;
-            background-color: $accent-color;
+            background-color: $primary;
             margin: 20px auto 0 auto;
         }
     }
     
     p {
         font-size: 20px;
-        color: #ffffff;
+        color: $white;
         margin-top: 20px;
     }
     
@@ -114,14 +108,6 @@ body {
 .featured-news {
     padding: 50px 0;
 
-    /*.container {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-        gap: 5px;
-        margin-bottom: 20px;
-    }
-    */
     .container{
         max-width: 900px;
         margin: 0 auto;
@@ -136,14 +122,14 @@ body {
     }
 
     h3 {
-        font-family: 'Alegreya', serif;
+        font-family: $serif;
         font-size: 36px;
-        color: $text-color;
+        color: $white;
         margin: 0;
     }
 
     .all-featured-news {
-        color: $accent-color;
+        color: $primary;
         font-size: 1rem;
         text-decoration: none;
         font-weight: bold;
@@ -187,24 +173,24 @@ body {
             }
 
             h4 {
-                font-family: 'Alegreya', serif;
+                font-family: $serif;
                 font-size: 30px;
                 font-weight: bold;
                 margin: 0;
-                color: #ffffff;
+                color: $white;
             }
 
             .date, .author {
                 font-size: 0.9rem;
-                color: #D5D5D5;
+                color: $gray;
             }
 
             .category {
-                background-color: $accent-color;
-                color: #000000;
+                background-color: $primary;
+                color: $black;
                 padding: 5px 10px;
                 border-radius: 21px;
-                font-family: 'Alegreya', serif;
+                font-family: $serif;
                 font-size: 12px;
                 font-weight: bold;
                 align-self: flex-start;
@@ -233,19 +219,19 @@ body {
 
 /* Latest News */
 .latest-news {
-    background-color: $background-color;
+    background-color: $background;
     padding: 50px 0;
     h3 {
         font-size: 1.8rem;
-        color: $text-color;
+        color: $white;
     }
     .filter-buttons {
         display: flex;
         gap: 10px;
         button {
             background-color: transparent;
-            color: $accent-color;
-            border: 2px solid $accent-color;
+            color: $primary;
+            border: 2px solid $primary;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
@@ -264,7 +250,7 @@ body {
             }
             h4 {
                 font-size: 1.2rem;
-                color: $text-color;
+                color: $white;
             }
             p {
                 color: #9ea7ad;
@@ -272,8 +258,8 @@ body {
         }
     }
     .news-page-button {
-        background-color: $button-color;
-        color: #ffffff;
+        background-color: $primary;
+        color: $white;
         border: none;
         padding: 15px 30px;
         border-radius: 5px;
@@ -281,31 +267,81 @@ body {
     }
 }
 
-/*Premium*/
-.premium {
-    background-image: url('../images/premium_banner.png');
+/* Premium */
+.premium-section {
+    height: 239px;
+    background-image: url('../images/premium.png');
     background-size: cover;
-    background-position: center;
-    padding: 160px 0;
-    text-align: center;
-    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; // Tres columnas
+    align-items: center; // Alinear verticalmente los elementos
+    padding: 0 40px; // Padding lateral
 
-    h2 {
-        font-family: 'Alegreya', serif;
-        font-size: 48px;
-        font-weight: bold;
-        color: #ffffff;
+    .premium-title,
+    .premium-description,
+    .premium-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
-    span {
-        color: $accent-color;
+    .premium-title {
+        grid-column: 1 / 2; // El título en la primera columna
+        
+        h2 {
+            font-family: $serif;
+            font-weight: bold;
+            font-size: 48px;
+            color: $white;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            text-align: left;
+            //white-space: pre-wrap;
+            max-width: 200px;
+
+            span {
+                color: $primary;
+            }
+        }
     }
-    
+
+    .premium-description {
+        grid-column: 2 / 3; // El párrafo en la segunda columna
+
+        p {
+            font-family: $sans;
+            font-size: 20px;
+            color: $white;
+            text-align: left;
+            font-weight: 350;
+        }
+    }
+
+    .premium-button {
+        grid-column: 3 / 4; // El botón en la tercera columna
+        display: flex;
+        justify-content: center; // Alinear el botón a la derecha
+        
+        button {
+            background-color: $primary;
+            color: $black;
+            font-family: $sans;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 55px;
+            border: none;
+            cursor: pointer;
+            min-width: 180px;
+        }
+    }
 }
+
 
 /* Footer */
 .footer {
-    background-color: #000000;
+    background-color: $black;
     height: 210px;
     display: flex;
     justify-content: center;
@@ -313,10 +349,10 @@ body {
     flex-direction: column;
     
     p {
-        font-family: 'Alegreya', serif;
+        font-family: $serif;
         font-weight: bold;
         font-size: 30px;
-        color: #ffffff;
+        color: $white;
         margin-bottom: 20px;
     }
 
@@ -327,7 +363,7 @@ body {
 
         a {
             display: inline-block;
-            width: 40px; /* Ajustar el tamaño del ícono */
+            width: 40px;
             height: 40px;
             transition: transform 0.3s ease;
 
