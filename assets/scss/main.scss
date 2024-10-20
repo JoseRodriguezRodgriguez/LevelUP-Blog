@@ -1,40 +1,59 @@
 @import "settings/variables";
+@import "settings/mixins";
 
 body {
     font-family: $sans;
     background-color: $background;
     color: $white;
     margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .container {
-    max-width: 900px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1rem;
 }
 
 /* Header */
 .header {
     background-color: $black;
-    height: 70px; 
+    /*height: 70px; 
     display: flex;
-    align-items: center;
-    padding: 0 40px;
+    align-items: center;*/
+    padding: 0.5rem 0;
+
+    @include media-min($tablet) {
+        padding: 0.75rem 0;
+    }
 
     .container {
-        max-width: 1000px;
+        //max-width: 1000px;
         display: flex;
-        justify-content: space-between;
+        //justify-content: space-between;
+        flex-direction: column;
         align-items: center;
-        padding: 0;
+        //padding: 0;
+
+        @include media-min($tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 
     .logo {
         font-family: $sans;
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: bold;
         color: $primary;
-        margin-right: 580px;
+        margin-bottom: 0.5rem;
+
+        @include media-min($tablet) {
+            margin-bottom: 0;
+        }
 
         span {
             font-weight: bold;
@@ -43,19 +62,19 @@ body {
     }
 
     .nav {
-        margin-left: auto;
+        //margin-left: auto;
         
         ul {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 1rem;
         }
 
         a {
             font-family: $serif;
             color:$white;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: 400;
             transition: color 0.3s ease;
 
@@ -71,17 +90,21 @@ body {
     background-image: url('../assets/images/hero_bg.png');
     background-size: cover;
     background-position: center;
-    padding: 160px 0;
+    padding:4rem 0;
     text-align: center;
     color: $white;
     
     h2 {
         font-family: $serif;
-        font-size: 48px;
+        font-size: 2rem;
         line-height: 1.2;
         color: $white;
         font-weight: bold;
         
+        @include media-min($tablet) {
+            font-size: 3rem;
+        }
+
         span {
             color: $primary;
         }
@@ -92,21 +115,24 @@ body {
             width: 180px;
             height: 1px;
             background-color: $primary;
-            margin: 20px auto 0 auto;
+            margin: 1rem auto 0;
         }
     }
     
     p {
-        font-size: 20px;
+        font-size: 1rem;
         color: $white;
-        margin-top: 20px;
+        margin-top: 1rem;
+
+        @include media-min($tablet) {
+            font-size: 1.25rem;
+        }
     }
-    
 }
 
 /* Featured News */
 .featured-news {
-    padding: 50px 0;
+    padding: 2rem 0;
 
     .container{
         max-width: 900px;
@@ -116,16 +142,27 @@ body {
 
     .featured-news-header {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        //justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 1rem;
+
+        @include media-min($tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
     h3 {
         font-family: $serif;
-        font-size: 36px;
+        font-size: 1.5rem;
         color: $white;
-        margin: 0;
+        margin: 0 0 1rem 0;
+
+        @include media-min($tablet) {
+            font-size: 2.25rem;
+            margin: 0;
+        }
     }
 
     .all-featured-news {
@@ -133,14 +170,19 @@ body {
         font-size: 1rem;
         text-decoration: none;
         font-weight: bold;
-        white-space: nowrap;
+        //white-space: nowrap;
     }
 
     .news-grid {
         display: grid;
-        grid-template-columns: 500px 510px;
-        grid-gap: 20px;
-        margin-top: 30px;
+        grid-template-columns: 1fr;
+        //grid-gap: 20px;
+        gap: 1rem;
+        margin-top: 1.5rem;
+
+        @include media-min($tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
 
         .news-item {
             position: relative;
@@ -150,6 +192,7 @@ body {
             flex-direction: column;
             justify-content: flex-end;
             height: 100%;
+            min-height: 200px;
             
             img {
                 position: absolute;
@@ -168,30 +211,34 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
-                gap: 10px;
-                padding: 10px;
+                gap: 0.5rem;
+                padding: 1rem;
             }
 
             h4 {
                 font-family: $serif;
-                font-size: 30px;
+                font-size: 1.5rem;
                 font-weight: bold;
                 margin: 0;
                 color: $white;
+
+                @include media-min($tablet) {
+                    font-size: 1.875rem;
+                }
             }
 
             .date, .author {
-                font-size: 0.9rem;
+                font-size: 0.875rem;
                 color: $gray;
             }
 
             .category {
                 background-color: $primary;
                 color: $black;
-                padding: 5px 10px;
+                padding: 0.25rem 0.5rem;
                 border-radius: 21px;
                 font-family: $serif;
-                font-size: 12px;
+                font-size: 0.75rem;
                 font-weight: bold;
                 align-self: flex-start;
             }
@@ -199,15 +246,22 @@ body {
 
         /* Primera noticia más grande */
         .large {
-            height: 380px;
-            grid-column: 1 / span 1;
+            @include media-min($tablet) {
+                height: 380px;
+                grid-column: 1 / span 1;
+            }
         }
 
         /* Noticias más pequeñas */
         .small-news-grid {
             display: grid;
-            grid-template-rows: 185px 185px;
-            grid-gap: 10px;
+            //grid-template-rows: 185px 185px;
+            //grid-gap: 10px;
+            gap: 1rem;
+
+            @include media-min($tablet) {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
             .news-item {
                 height: 185px;
@@ -218,24 +272,28 @@ body {
     &::after {
         content: "";
         display: block;
-        width: 1440px;
+        width: 100%;
         height: 1px;
         background-color: $sigle-line;
-        margin: 50px auto 0 auto;
+        margin: 2rem auto 0;
     }
 }
 
 /* Latest News */
 .latest-news {
-    padding: 50px 0;
+    padding: 2rem 0;
     text-align: center;
 
     h3 {
         font-family: $serif;
-        font-size: 36px;
+        font-size: 1.5rem;
         font-weight: bold;
         color: $white;
-        margin-bottom: 20px;
+        margin-bottom: 1rem;
+
+        @include media-min($tablet) {
+            font-size: 2.25rem;
+        }
 
         &::after {
             content: "";
@@ -243,31 +301,32 @@ body {
             width: 120px;
             height: 1px;
             background-color: $primary;
-            margin: 20px auto 0 auto;
+            margin: 1rem auto 0;
         }
     }
 
     p {
         font-family: $sans;
-        font-size: 16px;
+        font-size: 1rem;
         color: $white;
-        margin-bottom: 40px;
+        margin-bottom: 1.5rem;
     }
 
     .filter-buttons {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
-        margin-bottom: 40px;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
 
         button {
             background-color: transparent;
             color: $white;
             border: 2px solid $primary;
-            padding: 10px 20px;
+            padding: 0.5rem 1rem;
             border-radius: 30px;
             font-family: $sans;
-            font-size: 16px;
+            font-size: 0.875rem;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -281,23 +340,38 @@ body {
 
     .news-list {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 20px;
+        grid-template-columns: 1fr;
+        //grid-gap: 20px;
+        gap: 1rem;
         justify-content: center;
+
+        @include media-min($tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
 
         article {
             position: relative;
             display: flex;
+            flex-direction: column;
             background-color: $black;
             border-radius: 10px;
             overflow: hidden;
-            height: 160px;
-            width: 500px;
+            //width: 500px;
+
+            @include media-min($tablet) {
+                flex-direction: row;
+                height: 160px;
+            }
 
             img {
-                width: 188px;
-                height: 100%;
+                width: 100%;
+                height: 200px;
                 object-fit: cover;
+
+                @include media-min($tablet) {
+                    width: 40%;
+                    height: 100%;
+                }
             }
 
             &::before {
@@ -314,7 +388,7 @@ body {
 
             .news-info {
                 position: relative;
-                padding: 10px;
+                padding: 1rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -322,41 +396,50 @@ body {
                 text-align: left;
                 z-index: 2;
 
+                @include media-min($tablet) {
+                    width: 100%;
+                }
+
                 .category {
                     background-color: $primary;
                     color: $black;
-                    padding: 5px 10px;
+                    padding: 0.25rem 0.5rem;
                     border-radius: 21px;
                     font-family: $serif;
-                    font-size: 12px;
+                    font-size: 0.75rem;
                     font-weight: bold;
-                    margin-bottom: 5px;
-                    max-width: 60px;
-                    text-align: center;
+                    margin-bottom: 0.25rem;
+                    /*max-width: 60px;
+                    text-align: center;*/
                 }
 
                 .date {
-                    font-size: 14px;
+                    font-size: 0.875rem;
                     color: $gray;
-                    margin-bottom: 5px;
-                    margin-top: 5px;
+                    margin-bottom: 0.25rem;
+                    //margin-top: 5px;
                 }
 
                 h4 {
                     font-family: $serif;
-                    font-size: 24px;
+                    font-size: 1.25rem;
                     font-weight: bold;
                     color: $white;
-                    margin: 0;
-                    padding: 0;
-                    margin-bottom: 10px;
+                    margin: 0 0 0.5rem 0;
+                    //padding: 0;
+                    //margin-bottom: 10px;
+
+                    @include media-min($tablet) {
+                        font-size: 1.5rem;
+                    }
                 }
 
                 p {
-                    font-size: 14px;
+                    font-size: 0.875rem;
                     color: $gray;
-                    margin-top: 0;
-                    margin-bottom: 10px;
+                    margin: 0
+                    //margin-top: 0;
+                    //margin-bottom: 10px;
                 }
             }
         }
@@ -366,14 +449,14 @@ body {
         background-color: $primary;
         color: $black;
         font-family: $sans;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: bold;
-        padding: 10px 20px;
+        padding: 0.5rem 1rem;
         border-radius: 55px;
         border: none;
         cursor: pointer;
-        margin-top: 40px;
-        max-width: 180px;
+        margin-top: 2rem;
+        //max-width: 180px;
         transition: background-color 0.3s;
 
         &:hover {
@@ -384,36 +467,49 @@ body {
 
 /* Premium */
 .premium-section {
-    height: 239px;
+    //height: 239px;
     background-image: url('../images/premium.png');
     background-size: cover;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; // Tres columnas
-    align-items: center; // Alinear verticalmente los elementos
-    padding: 0 40px; // Padding lateral
+    //display: grid;
+    //grid-template-columns: 1fr 1fr 1fr; 
+    //align-items: center; 
+    padding: 2rem 0;
 
-    .premium-title,
+    /*.premium-title,
     .premium-description,
     .premium-button {
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
+    }*/
+    .container {
+        display: grid;
+        gap: 1rem;
+
+        @include media-min($tablet) {
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+        }
     }
 
     .premium-title {
-        grid-column: 1 / 2; // El título en la primera columna
+        //grid-column: 1 / 2;
         
         h2 {
             font-family: $serif;
             font-weight: bold;
-            font-size: 48px;
+            font-size: 2rem;
             color: $white;
             line-height: 1.2;
-            margin-bottom: 10px;
-            text-align: left;
+            margin-bottom: 1rem;
+            //text-align: left;
             //white-space: pre-wrap;
-            max-width: 200px;
+            //max-width: 200px;
+
+            @include media-min($tablet) {
+                font-size: 3rem;
+            }
 
             span {
                 color: $primary;
@@ -422,29 +518,33 @@ body {
     }
 
     .premium-description {
-        grid-column: 2 / 3; // El párrafo en la segunda columna
+        //grid-column: 2 / 3; 
 
         p {
             font-family: $sans;
-            font-size: 20px;
+            font-size: 1rem;
             color: $white;
-            text-align: left;
+            //text-align: left;
             font-weight: 350;
+            
+            @include media-min($tablet) {
+                font-size: 1.25rem;
+            }
         }
     }
 
     .premium-button {
-        grid-column: 3 / 4; // El botón en la tercera columna
+        //grid-column: 3 / 4;
         display: flex;
-        justify-content: center; // Alinear el botón a la derecha
+        justify-content: center;
         
         button {
             background-color: $primary;
             color: $black;
             font-family: $sans;
             font-weight: bold;
-            font-size: 16px;
-            padding: 10px 20px;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
             border-radius: 55px;
             border: none;
             cursor: pointer;
@@ -461,23 +561,29 @@ body {
 /* Footer */
 .footer {
     background-color: $black;
-    height: 210px;
+    padding: 2rem 0;
+    text-align: center;
+    /* height: 210px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; */
     
     p {
         font-family: $serif;
         font-weight: bold;
-        font-size: 30px;
+        font-size: 1.5rem;
         color: $white;
-        margin-bottom: 20px;
+        margin-bottom: 1rem;
+
+        @include media-min($tablet) {
+            font-size: 1.875rem;
+        }
     }
 
     .social-icons {
         display: flex;
-        gap: 20px;
+        gap: 1rem;
         justify-content: center;
 
         a {
