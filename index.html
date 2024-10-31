@@ -11,12 +11,12 @@
     <!-- Header Section -->
     <header class="header">
         <div class="container">
-            <h1 class="logo">ACADEMY<span>BLOG</span></h1>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#">Articles</a></li>
-                    <li><a href="#">Premium</a></li>
-                    <li><a href="#">Sign in</a></li>
+            <h1 class="header__logo">ACADEMY<span class="header__logo-highlight">BLOG</span></h1>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="#" class="header__nav-link">Articles</a></li>
+                    <li class="header__nav-item"><a href="#" class="header__nav-link">Premium</a></li>
+                    <li class="header__nav-item"><a href="#" class="header__nav-link">Sign in</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,45 +25,45 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2>Lorem ipsum dolor <span>sit amet</span></h2>
-            <p>Donec non massa auctor, dictum ante eu, ultrices eros. Sed sit amet augue nec diam tempor placerat. Integer dignissim lacinia turpis.</p>
+            <h2 class="hero__title">Lorem ipsum dolor <span class="hero__title-highlight">sit amet</span></h2>
+            <p class="hero__description">Donec non massa auctor, dictum ante eu, ultrices eros. Sed sit amet augue nec diam tempor placerat. Integer dignissim lacinia turpis.</p>
         </div>
     </section>
 
     <!-- Featured News Section -->
     <section class="featured-news">
         <div class="container">
-            <div class="featured-news-header">
-                <h3>Featured news</h3>
-                <a href="#" class="all-featured-news">All featured news</a>
+            <div class="featured-news__header">
+                <h3 class="featured-news__title">Featured news</h3>
+                <a href="#" class="featured-news__link">All featured news</a>
             </div>
-            <div class="news-grid">
-                <article class="news-item large">
-                    <img src="assets/images/code.png" alt="News Image">
-                    <div class="content">
-                        <span class="category">Design</span>
-                        <span class="date">May 4, 2024</span>
-                        <h4>Lorem ipsum dolor sit</h4>
-                        <span class="author">By: Author Name</span>
+            <div class="featured-news__grid">
+                <article class="news-item news-item--large">
+                    <img src="assets/images/code.png" alt="News Image" class="news-item__image">
+                    <div class="news-item__content">
+                        <span class="news-item__category">Design</span>
+                        <span class="news-item__date">May 4, 2024</span>
+                        <h4 class="news-item__title">Lorem ipsum dolor sit</h4>
+                        <span class="news-item__author">By: Author Name</span>
                     </div>
                 </article>
-                <div class="small-news-grid">
-                    <article class="news-item small">
-                        <img src="assets/images/city_night.png" alt="News Image">
-                        <div class="content">
-                            <span class="category">Design</span>
-                            <span class="date">May 4, 2024</span>
-                            <h4>Lorem ipsum dolor sit</h4>
-                            <span class="author">By: Author Name</span>
+                <div class="featured-news__small-grid">
+                    <article class="news-item news-item--small">
+                        <img src="assets/images/city_night.png" alt="News Image" class="news-item__image">
+                        <div class="news-item__content">
+                            <span class="news-item__category">Design</span>
+                            <span class="news-item__date">May 4, 2024</span>
+                            <h4 class="news-item__title">Lorem ipsum dolor sit</h4>
+                            <span class="news-item__author">By: Author Name</span>
                         </div>
                     </article>
-                    <article class="news-item small">
-                        <img src="assets/images/podcast.png" alt="News Image">
-                        <div class="content">
-                            <span class="category">Design</span>
-                            <span class="date">May 4, 2024</span>
-                            <h4>Lorem ipsum dolor sit</h4>
-                            <span class="author">By: Author Name</span>
+                    <article class="news-item news-item--small">
+                        <img src="assets/images/podcast.png" alt="News Image" class="news-item__image">
+                        <div class="news-item__content">
+                            <span class="news-item__category">Design</span>
+                            <span class="news-item__date">May 4, 2024</span>
+                            <h4 class="news-item__title">Lorem ipsum dolor sit</h4>
+                            <span class="news-item__author">By: Author Name</span>
                         </div>
                     </article>
                 </div>
@@ -74,103 +74,101 @@
     <!-- Latest News Section -->
     <section class="latest-news">
         <div class="container">
-            <h3>Latest news</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti ipsum, nesciunt explicabo cumque dolorum porro</p>
-            <div class="filter-buttons">
-                <button>All topics</button>
-                <button>AI</button>
-                <button>Design</button>
-                <button>Programming</button>
+            <h3 class="latest-news__title">Latest news</h3>
+            <p class="latest-news__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti ipsum, nesciunt explicabo cumque dolorum porro</p>
+            <div class="latest-news__filter">
+                <button class="latest-news__filter-button">All topics</button>
+                <button class="latest-news__filter-button">AI</button>
+                <button class="latest-news__filter-button">Design</button>
+                <button class="latest-news__filter-button">Programming</button>
             </div>
-            <div class="news-list">
-                <article>
-                    <img src="assets/images/podcast.png" alt="News Image">
-                    <div class="news-info">
-                        <span class="category">Design</span>
-                        <span class="date">May, 4 2024</span>
-                        <h4>Lorem ipsum dolor sit</h4>
-                        <p>By: Author Name</p>
+            <div class="latest-news__grid">
+                <article class="news-item">
+                    <img src="assets/images/podcast.png" alt="News Image" class="news-item__image">
+                    <div class="news-item__content">
+                        <span class="news-item__category">Design</span>
+                        <span class="news-item__date">May, 4 2024</span>
+                        <h4 class="news-item__title">Lorem ipsum dolor sit</h4>
+                        <p class="news-item__author">By: Author Name</p>
                     </div>
                 </article>
-                <article>
-                    <img src="assets/images/podcast.png" alt="News Image">
-                    <div class="news-info">
-                        <span class="category">Design</span>
-                        <span class="date">May, 4 2024</span>
-                        <h4>Lorem ipsum dolor sit</h4>
-                        <p>By: Author Name</p>
+                <article class="news-item">
+                    <img src="assets/images/podcast.png" alt="News Image" class="news-item__image">
+                    <div class="news-item__content">
+                        <span class="news-item__category">Design</span>
+                        <span class="news-item__date">May, 4 2024</span>
+                        <h4 class="news-item__title">Lorem ipsum dolor sit</h4>
+                        <p class="news-item__author">By: Author Name</p>
                     </div>
                 </article>
-                <article>
-                    <img src="assets/images/podcast.png" alt="News Image">
-                    <div class="news-info">
-                        <span class="category">Design</span>
-                        <span class="date">May, 4 2024</span>
-                        <h4>Lorem ipsum dolor sit</h4>
-                        <p>By: Author Name</p>
+                <article class="news-item">
+                    <img src="assets/images/podcast.png" alt="News Image" class="news-item__image">
+                    <div class="news-item__content">
+                        <span class="news-item__category">Design</span>
+                        <span class="news-item__date">May, 4 2024</span>
+                        <h4 class="news-item__title">Lorem ipsum dolor sit</h4>
+                        <p class="news-item__author">By: Author Name</p>
                     </div>
                 </article>
-                <article>
-                    <img src="assets/images/podcast.png" alt="News Image">
-                    <div class="news-info">
-                        <span class="category">Design</span>
-                        <span class="date">May, 4 2024</span>
-                        <h4>Lorem ipsum dolor sit</h4>
-                        <p>By: Author Name</p>
+                <article class="news-item">
+                    <img src="assets/images/podcast.png" alt="News Image" class="news-item__image">
+                    <div class="news-item__content">
+                        <span class="news-item__category">Design</span>
+                        <span class="news-item__date">May, 4 2024</span>
+                        <h4 class="news-item__title">Lorem ipsum dolor sit</h4>
+                        <p class="news-item__author">By: Author Name</p>
                     </div>
                 </article>
-                <article>
-                    <img src="assets/images/podcast.png" alt="News Image">
-                    <div class="news-info">
-                        <span class="category">Design</span>
-                        <span class="date">May, 4 2024</span>
-                        <h4>Lorem ipsum dolor sit</h4>
-                        <p>By: Author Name</p>
+                <article class="news-item">
+                    <img src="assets/images/podcast.png" alt="News Image" class="news-item__image">
+                    <div class="news-item__content">
+                        <span class="news-item__category">Design</span>
+                        <span class="news-item__date">May, 4 2024</span>
+                        <h4 class="news-item__title">Lorem ipsum dolor sit</h4>
+                        <p class="news-item__author">By: Author Name</p>
                     </div>
                 </article>
-                <article>
-                    <img src="assets/images/podcast.png" alt="News Image">
-                    <div class="news-info">
-                        <span class="category">Design</span>
-                        <span class="date">May, 4 2024</span>
-                        <h4>Lorem ipsum dolor sit</h4>
-                        <p>By: Author Name</p>
+                <article class="news-item">
+                    <img src="assets/images/podcast.png" alt="News Image" class="news-item__image">
+                    <div class="news-item__content">
+                        <span class="news-item__category">Design</span>
+                        <span class="news-item__date">May, 4 2024</span>
+                        <h4 class="news-item__title">Lorem ipsum dolor sit</h4>
+                        <p class="news-item__author">By: Author Name</p>
                     </div>
                 </article>
             </div>
-            <button class="news-page-button">News page</button>
+            <button class="latest-news__button">News page</button>
         </div>
     </section>
     
     <!-- Premium Section -->
-    <section class="premium-section">
-        <div class="premium-title">
-            <h2>Start <span>premium</span> membership</h2>
-        </div>
-        <div class="premium-description">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam a, quia quasi quod cum quas distinctio facilis sint non harum saepe accusantium ratione optio explicabo sed architecto, dignissimos sapiente velit?</p>
-        </div>
-        <div class="premium-button">
-            <button>Start premium</button>
+    <section class="premium">
+        <div class="container premium__container">
+            <div class="premium__content">
+                <h2 class="premium__title">Start <span class="premium__title-highlight">premium</span> membership</h2>
+                <p class="premium__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam a, quia quasi quod cum quas distinctio facilis sint non harum saepe accusantium ratione optio explicabo sed architecto, dignissimos sapiente velit?</p>
+                <button class="premium__button">Start premium</button>
+            </div>
         </div>
     </section>
 
     <!-- Footer Section -->
     <footer class="footer">
         <div class="container">
-            <p>Follow us on social media</p>
-            <div class="social-icons">
-                <a href="https://facebook.com" target="_blank">
-                    <img src="assets/icons/Fb.png" alt="Facebook">
+            <p class="footer__text">Follow us on social media</p>
+            <div class="footer__social-icons">
+                <a href="https://facebook.com" target="_blank" class="footer__social-link">
+                    <img src="assets/icons/Fb.png" alt="Facebook" class="footer__social-icon">
                 </a>
-                <a href="https://twitter.com" target="_blank">
-                    <img src="assets/icons/Tw.png" alt="Twitter">
+                <a href="https://twitter.com" target="_blank" class="footer__social-link">
+                    <img src="assets/icons/Tw.png" alt="Twitter" class="footer__social-icon">
                 </a>
-                <a href="https://pinterest.com" target="_blank">
-                    <img src="assets/icons/Pn.png" alt="Pinterest">
+                <a href="https://pinterest.com" target="_blank" class="footer__social-link">
+                    <img src="assets/icons/Pn.png" alt="Pinterest" class="footer__social-icon">
                 </a>
-                <a href="https://behance.net" target="_blank">
-                    <img src="assets/icons/Be.png" alt="Behance">
+                <a href="https://behance.net" target="_blank" class="footer__social-link">
+                    <img src="assets/icons/Be.png" alt="Behance" class="footer__social-icon">
                 </a>
             </div>
         </div>
