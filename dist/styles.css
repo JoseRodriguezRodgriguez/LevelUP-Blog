@@ -201,6 +201,14 @@ body {
     gap: 10px;
   }
 }
+.featured-news::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 1px;
+  background-color: #113F55;
+  margin: 4rem auto 0;
+}
 
 .news-item {
   position: relative;
@@ -298,13 +306,13 @@ body {
   margin-bottom: 3rem;
 }
 .latest-news__filter-button {
+  font-family: "Alegreya", serif;
+  font-size: 1rem;
   background-color: transparent;
   color: white;
   border: 2px solid #2CBCFF;
   padding: 0.5rem 1.5rem;
   border-radius: 2rem;
-  font-family: "Alegreya Sans", sans-serif;
-  font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -322,33 +330,51 @@ body {
   .latest-news__grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
   }
 }
 .latest-news__grid .news-item {
-  height: 280px;
+  width: 100%;
+  height: 160px;
   border-radius: 0.5rem;
   overflow: hidden;
   position: relative;
   background-color: #001E30;
+  display: flex;
+}
+@media (min-width: 1024px) {
+  .latest-news__grid .news-item {
+    width: 500px;
+  }
 }
 .latest-news__grid .news-item__image {
+  position: relative;
+  width: 33%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.latest-news__grid .news-item::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  opacity: 0.6;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75));
+  z-index: 2;
 }
 .latest-news__grid .news-item__content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  padding: 1.5rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  position: relative;
+  width: 66%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.25rem;
+  z-index: 3;
+  background: black;
   text-align: left;
 }
 .latest-news__grid .news-item__category {
@@ -390,40 +416,52 @@ body {
 
 /* Premium */
 .premium {
-  background-image: url("../assets/images/premium.png");
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/images/premium.png");
   background-size: cover;
-  padding: 2rem 0;
+  background-position: center;
+  padding: 4rem 0;
 }
 .premium__container {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 @media (min-width: 1024px) {
   .premium__container {
-    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
 }
 .premium__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 @media (min-width: 1024px) {
   .premium__content {
+    flex-direction: row;
+    align-items: center;
     text-align: left;
+    width: 100%;
   }
 }
 .premium__title {
   font-family: "Alegreya", serif;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 3rem;
   color: white;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
 }
 @media (min-width: 1024px) {
   .premium__title {
-    font-size: 3rem;
-    max-width: 200px;
+    font-size: 2.5rem;
+    margin: 0;
+    flex: 0 0 auto;
+    max-width: 300px;
   }
 }
 .premium__title-highlight {
@@ -434,11 +472,16 @@ body {
   font-size: 1rem;
   color: white;
   font-weight: 350;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
 }
 @media (min-width: 1024px) {
   .premium__description {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+    margin: 0;
+    flex: 1;
+    padding: 0 2rem;
+    text-align: center;
+    max-width: 500px;
   }
 }
 .premium__button {
@@ -447,11 +490,16 @@ body {
   font-family: "Alegreya Sans", sans-serif;
   font-weight: bold;
   font-size: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 2rem;
   border-radius: 55px;
   border: none;
   cursor: pointer;
-  min-width: 180px;
+  transition: background-color 0.3s ease;
+}
+@media (min-width: 1024px) {
+  .premium__button {
+    flex: 0 0 auto;
+  }
 }
 .premium__button:hover {
   background-color: rgb(0, 169.2511848341, 248);
